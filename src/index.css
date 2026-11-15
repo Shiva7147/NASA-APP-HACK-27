@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #000000;
+    color: #f4f4f8;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Atmospheric flame glows matching Kontour */
+.flame-radial-hero {
+  background: radial-gradient(circle at 55% 25%, rgba(255, 56, 0, 0.45) 0%, rgba(200, 25, 0, 0.18) 40%, rgba(0, 0, 0, 0) 72%);
+}
+
+.flame-bottom-glow {
+  background: radial-gradient(circle at 50% 85%, rgba(255, 56, 0, 0.48) 0%, rgba(180, 20, 0, 0.18) 45%, rgba(0, 0, 0, 0) 75%);
+}
+
+.flame-card-glow {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 75, 20, 0.9) 0%, rgba(210, 30, 0, 0.85) 40%, rgba(110, 10, 0, 0.95) 100%);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1d28;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3042;
+}
+
+/* Doto dot-matrix typography tuning */
+.dot-matrix {
+  font-family: 'Doto', monospace;
+  font-variation-settings: 'ROND' 0;
+}
+
+/* Fine matte stippling texture */
+.cosmic-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+/* StarBorder keyframe animations from React Bits */
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
+
+.animate-star-movement {
+  animation: star-movement-bottom linear infinite alternate;
+}
+
+.animate-star-movement-reverse {
+  animation: star-movement-top linear infinite alternate;
+}
+
+/* NASA Mission HUD Grid */
+.nasa-hud-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Topographic horizon contour mesh (Reference Image 2) */
+.contour-mesh {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+/* Tabular figures */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
